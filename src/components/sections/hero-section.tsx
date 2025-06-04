@@ -22,8 +22,11 @@ export default function HeroSection() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Tommy Miyazaki
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 font-medium">
+            <p className="text-lg md:text-xl text-muted-foreground mb-2 font-medium">
               Frontend Developer | Expert in Angular & React | Building Responsive & Scalable Web Applications.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground mb-8">
+              Open to roles as PMO, Business Analyst, Frontend, or Fullstack Developer. Keen interest in opportunities in Japan or overseas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button asChild size="lg" variant="default" className="bg-primary text-primary-foreground border-primary-foreground shadow-[2px_2px_0px_hsl(var(--primary-foreground))] hover:shadow-[3px_3px_0px_hsl(var(--primary-foreground))] active:shadow-[1px_1px_0px_hsl(var(--primary-foreground))]">
