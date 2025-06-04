@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import type React from 'react';
 
@@ -54,14 +54,18 @@ export default function ContactSection() {
                   </p>
                 </div>
                 <div className="space-y-3">
-                  <Link href="mailto:tommy.miyazaki@example.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
+                  <Link href="mailto:miyazaki.tommy@gmail.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                     <Mail className="h-5 w-5 text-primary group-hover:animate-ping" />
-                    <span>tommy.miyazaki@example.com</span>
+                    <span>miyazaki.tommy@gmail.com</span>
                   </Link>
-                  <Link href="tel:+1234567890" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
+                  <Link href="tel:+628111478820" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                     <Phone className="h-5 w-5 text-primary group-hover:animate-ping" />
-                    <span>+1 (234) 567-890</span>
+                    <span>+62 811 147 8820</span>
                   </Link>
+                   <div className="flex items-center gap-3 text-foreground">
+                    <MapPin className="h-5 w-5 text-primary" />
+                    <span>Tangerang, Indonesia</span>
+                  </div>
                   <Link href="https://linkedin.com/in/tommymiyazaki" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                     <Linkedin className="h-5 w-5 text-primary group-hover:animate-ping" />
                     <span>linkedin.com/in/tommymiyazaki</span>
