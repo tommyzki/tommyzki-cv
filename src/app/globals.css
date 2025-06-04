@@ -25,7 +25,7 @@ body {
     --secondary-foreground: 26 73% 20%; /* Darker Brown for contrast */
 
     --muted: 62 64% 26%; /* #6C6F18 Dark Olive Green */
-    --muted-foreground: 39 70% 85%; /* Lighter Cream for contrast */
+    --muted-foreground: 26 73% 33%; /* #915018 Brown (was Lighter Cream) */
 
     --accent: 33 85% 53%; /* #EC8922 Yellow-Orange */
     --accent-foreground: 26 73% 20%; /* Darker Brown for contrast */
@@ -72,7 +72,7 @@ body {
     --secondary-foreground: 39 80% 98%; /* Light Cream for contrast */
 
     --muted: 26 15% 20%; /* Darker, desaturated brown for muted backgrounds */
-    --muted-foreground: 39 60% 80%; /* Less prominent cream for muted text */
+    --muted-foreground: 39 75% 65%; /* Darker Cream for muted text (was Less prominent cream) */
 
     --accent: 33 88% 58%; /* Brighter #EC8922 Yellow-Orange */
     --accent-foreground: 39 80% 98%; /* Light Cream for contrast */
