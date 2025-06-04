@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github } from 'lucide-react';
+import { Github, BookOpen } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 interface Project {
@@ -21,6 +21,8 @@ interface ProjectCategory {
   categoryTitle: string;
   projects: Project[];
   showGithubButton?: boolean;
+  showMediumButton?: boolean; // Added for Medium button
+  mediumLink?: string; // Added for Medium button link
 }
 
 const projectData: ProjectCategory[] = [
@@ -111,7 +113,9 @@ const projectData: ProjectCategory[] = [
         imagePlaceholder: 'https://placehold.co/600x400.png',
         imageAiHint: 'career path diagram'
       }
-    ]
+    ],
+    showMediumButton: true,
+    mediumLink: 'https://medium.com/@miyazaki.tommy',
   }
 ];
 
@@ -193,6 +197,16 @@ export default function ProjectsSection() {
                       <Link href="https://github.com/tommyzki" target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-5 w-5" />
                         Visit my personal GitHub
+                      </Link>
+                    </Button>
+                  </div>
+                )}
+                 {category.showMediumButton && category.mediumLink && (
+                  <div className="text-center pt-8">
+                    <Button asChild variant="default" size="lg" className="bg-accent text-accent-foreground border-accent-foreground shadow-[2px_2px_0px_hsl(var(--accent-foreground))] hover:shadow-[3px_3px_0px_hsl(var(--accent-foreground))] active:shadow-[1px_1px_0px_hsl(var(--accent-foreground))]">
+                      <Link href={category.mediumLink} target="_blank" rel="noopener noreferrer">
+                        <BookOpen className="mr-2 h-5 w-5" />
+                        Visit my Medium
                       </Link>
                     </Button>
                   </div>
