@@ -22,8 +22,9 @@ const skillCategories = [
     title: 'Frameworks & Libraries',
     icon: <Cog className="h-5 w-5 mr-2 text-primary" />,
     skills: [
-      { name: 'Angular (4 years)', icon: <Cog className="h-4 w-4 mr-1" /> },
-      { name: 'React (2 years)', icon: <Cog className="h-4 w-4 mr-1" /> },
+      { name: 'Angular', icon: <Cog className="h-4 w-4 mr-1" /> },
+      { name: 'React', icon: <Cog className="h-4 w-4 mr-1" /> },
+      { name: 'Stencil', icon: <Cog className="h-4 w-4 mr-1" /> },
     ]
   },
   {
