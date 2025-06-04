@@ -23,7 +23,7 @@ export default function ProjectsSection() {
                     <CardTitle className="text-xl">Project Title {i}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="w-full h-40 bg-muted flex items-center justify-center mb-4">
+                    <div className="w-full h-40 bg-accent border-primary-foreground border-2 shadow-pixel flex items-center justify-center mb-4">
                       <span className="text-sm text-foreground">Placeholder Image</span>
                     </div>
                     <p className="text-sm text-muted-foreground mb-4">
@@ -35,7 +35,7 @@ export default function ProjectsSection() {
               ))}
             </div>
             <Button asChild variant="default" size="lg" className="mt-8 bg-accent text-accent-foreground border-accent-foreground shadow-[2px_2px_0px_hsl(var(--accent-foreground))] hover:shadow-[3px_3px_0px_hsl(var(--accent-foreground))] active:shadow-[1px_1px_0px_hsl(var(--accent-foreground))]">
-              <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/tommyzki" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-5 w-5" />
                 Visit my GitHub
               </Link>

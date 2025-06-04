@@ -13,7 +13,7 @@ const experiences = [
     period: '2024 – Present',
     description: ' I’ve been working since January 2024, I’ve been deeply involved in developing and enhancing web applications using Angular and React. I take pride in leading the code quality process and managing incoming tickets and defects to ensure smooth development cycles. My dedication and performance were recognized when I was awarded Best Employee for Semester 1.',
     icon: <Briefcase className="h-6 w-6 text-primary" />,
-    highlights: ['Awarded Best Employee (Semester 1)']
+    highlights: ['Awarded Best Employee']
   },
   {
     role: 'Frontend Developer',
@@ -21,7 +21,7 @@ const experiences = [
     period: '2021 – 2023',
     description: 'Developed and maintained more than ten applications and web pages using Angular and React. I initiated and led the creation of a standardized boilerplate, which significantly improved the consistency and efficiency of our frontend development. My focus was always on writing clean, scalable code and mentoring teammates on best practices.',
     icon: <Briefcase className="h-6 w-6 text-primary" />,
-    highlights: ['initiated and led the creation of a standardized boilerplate']
+    highlights: ['Led standardized boilerplate']
   },
   {
     role: 'Web Developer',

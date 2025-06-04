@@ -66,13 +66,13 @@ export default function ContactSection() {
                     <MapPin className="h-5 w-5 text-primary" />
                     <span>Tangerang, Indonesia</span>
                   </div>
-                  <Link href="https://linkedin.com/in/tommymiyazaki" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
+                  <Link href="https://linkedin.com/in/tommyzki" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                     <Linkedin className="h-5 w-5 text-primary group-hover:animate-ping" />
-                    <span>linkedin.com/in/tommymiyazaki</span>
+                    <span>linkedin.com/in/tommyzki</span>
                   </Link>
-                  <Link href="https://github.com/tommymiyazaki" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
+                  <Link href="https://github.com/tommyzki" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
                     <Github className="h-5 w-5 text-primary group-hover:animate-ping" />
-                    <span>github.com/tommymiyazaki</span>
+                    <span>github.com/tommyzki</span>
                   </Link>
                 </div>
               </div>

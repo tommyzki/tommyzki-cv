@@ -13,9 +13,9 @@ const educationData = [
   },
   {
     institution: 'Yoshida Gakkou 吉田 学校',
-    period: '2023', // You can update this period if needed
-    title: 'JLP A2 Certificate',
-    description: "Successfully completed an intensive Japanese language program, mastering foundational grammar, vocabulary, and conversational skills. Achieved JLP A2 certification, demonstrating proficiency in basic Japanese communication.",
+    period: '2021', // You can update this period if needed
+    title: 'JFT Basic A2 Certificate',
+    description: "Successfully completed an intensive Japanese language program, mastering foundational grammar, vocabulary, and conversational skills. Achieved JFT Basic A2 certification, demonstrating proficiency in basic Japanese communication.",
     details: ['Score: 100 points'],
     icon: <Languages className="h-7 w-7 text-primary-foreground" />,
   }
