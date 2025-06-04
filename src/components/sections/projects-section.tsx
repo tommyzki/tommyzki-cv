@@ -1,45 +1,161 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Github } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+
+interface Project {
+  title: string;
+  description: string;
+  link?: string;
+  repo?: string;
+  status: 'Deployed' | 'Coming Soon' | 'In Development';
+  tags?: string[];
+  imagePlaceholder: string;
+  imageAiHint: string;
+}
+
+interface ProjectCategory {
+  categoryTitle: string;
+  projects: Project[];
+}
+
+const projectData: ProjectCategory[] = [
+  {
+    categoryTitle: 'Personal Projects',
+    projects: [
+      {
+        title: 'tommyzki-cv (Portfolio)',
+        description: 'My upcoming personal portfolio website, planned to be hosted on GitHub Pages, showcasing my journey and projects.',
+        link: 'https://tommyzki.github.io/',
+        repo: 'https://github.com/tommyzki/tommyzki-cv', // Placeholder repo
+        status: 'Coming Soon',
+        tags: ['Next.js', 'React', 'TailwindCSS'],
+        imagePlaceholder: 'https://placehold.co/600x400.png',
+        imageAiHint: 'portfolio website'
+      },
+      {
+        title: 'tommyzki-ui',
+        description: 'A library of reusable web components generated using StencilJS. These components are framework-agnostic and can be used in React, Angular, Vue, or vanilla HTML projects.',
+        link: 'https://tommyzki.github.io/tommyzki-ui',
+        repo: 'https://github.com/tommyzki/tommyzki-ui', // Placeholder repo
+        status: 'Deployed',
+        tags: ['StencilJS', 'Web Components', 'UI Library'],
+        imagePlaceholder: 'https://placehold.co/600x400.png',
+        imageAiHint: 'ui components code'
+      },
+    ]
+  },
+  {
+    categoryTitle: 'Company Projects (Conceptual Examples)',
+    projects: [
+      {
+        title: 'Client Data Analytics Platform',
+        description: 'Developed key frontend modules for a B2B data analytics platform using Angular, enabling clients to gain insights from large datasets. Focused on component reusability and performance.',
+        status: 'Deployed',
+        tags: ['Angular', 'Data Visualization', 'TypeScript', 'RxJS'],
+        repo: 'https://github.com/tommyzki/dummy-company-project-1', 
+        imagePlaceholder: 'https://placehold.co/600x400.png',
+        imageAiHint: 'analytics dashboard'
+      },
+      {
+        title: 'Mobile-First E-commerce Site',
+        description: 'Built responsive UI/UX features for a high-traffic e-commerce website using React and Next.js. Implemented state management solutions and integrated with various third-party APIs.',
+        status: 'Deployed',
+        tags: ['React', 'Next.js', 'State Management', 'E-commerce'],
+        link: 'https://example-company.com/project-showcase/ecomm', 
+        imagePlaceholder: 'https://placehold.co/600x400.png',
+        imageAiHint: 'online store shopping'
+      },
+      {
+        title: 'Internal Workflow Automation Tool',
+        description: 'Designed and implemented an internal tool with Angular to automate critical business workflows, significantly improving operational efficiency and reducing manual data entry.',
+        status: 'Deployed',
+        tags: ['Angular', 'Internal Tools', 'Automation'],
+        imagePlaceholder: 'https://placehold.co/600x400.png',
+        imageAiHint: 'workflow tool chart'
+      }
+    ]
+  }
+];
 
 export default function ProjectsSection() {
   return (
     <section id="projects" className="py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <Card className="text-center">
-          <CardHeader>
+        <Card>
+          <CardHeader className="text-center">
             <CardTitle className="text-2xl md:text-3xl font-bold">My Projects</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <p className="text-base md:text-lg text-muted-foreground">
-              I&apos;m currently curating my best work to showcase here. 
-              Stay tuned for updates! In the meantime, feel free to explore my repositories on GitHub.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3].map((i) => (
-                <Card key={i} className="bg-background/50">
-                  <CardHeader>
-                    <CardTitle className="text-xl">Project Title {i}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="w-full h-40 bg-accent border-primary-foreground border-2 shadow-pixel flex items-center justify-center mb-4">
-                      <span className="text-sm text-foreground">Placeholder Image</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      A brief description of project {i} will go here. It will highlight the technologies used and the problems solved.
-                    </p>
-                    <Button variant="outline" className="w-full">View Details (Soon)</Button>
-                  </CardContent>
-                </Card>
-              ))}
+          <CardContent className="space-y-12">
+            {projectData.map((category) => (
+              <div key={category.categoryTitle}>
+                <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6 text-left border-b-2 border-primary pb-2">
+                  {category.categoryTitle}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {category.projects.map((project) => (
+                    <Card key={project.title} className="flex flex-col bg-card">
+                      <CardHeader>
+                        <div className="flex justify-between items-start">
+                          <CardTitle className="text-lg md:text-xl mb-1">{project.title}</CardTitle>
+                          <Badge 
+                            variant={project.status === 'Deployed' ? 'default' : project.status === 'Coming Soon' ? 'secondary' : 'outline'}
+                            className="text-xs whitespace-nowrap"
+                          >
+                            {project.status}
+                          </Badge>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="flex flex-col flex-grow space-y-3">
+                        <div className="relative w-full h-40 mb-2 overflow-hidden border-2 shadow-pixel border-foreground">
+                          <Image 
+                            src={project.imagePlaceholder} 
+                            alt={project.title} 
+                            fill
+                            className="object-cover"
+                            data-ai-hint={project.imageAiHint}
+                          />
+                        </div>
+                        <p className="text-sm text-muted-foreground flex-grow min-h-[60px]">
+                          {project.description}
+                        </p>
+                        {project.tags && project.tags.length > 0 && (
+                          <div className="mb-2 pt-1">
+                            <h4 className="text-xs font-semibold mb-1.5 text-foreground">Technologies:</h4>
+                            <div className="flex flex-wrap gap-1.5">
+                              {project.tags.map(tag => <Badge key={tag} variant="outline" className="text-xs">{tag}</Badge>)}
+                            </div>
+                          </div>
+                        )}
+                        <div className="flex gap-2 mt-auto pt-2">
+                          {project.link && (
+                            <Button asChild variant="outline" size="sm" className="flex-1">
+                              <Link href={project.link} target="_blank" rel="noopener noreferrer">View Live</Link>
+                            </Button>
+                          )}
+                          {project.repo && (
+                            <Button asChild variant="secondary" size="sm" className="flex-1">
+                              <Link href={project.repo} target="_blank" rel="noopener noreferrer">View Code</Link>
+                            </Button>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            ))}
+            <div className="text-center pt-8">
+              <Button asChild variant="default" size="lg" className="bg-accent text-accent-foreground border-accent-foreground shadow-[2px_2px_0px_hsl(var(--accent-foreground))] hover:shadow-[3px_3px_0px_hsl(var(--accent-foreground))] active:shadow-[1px_1px_0px_hsl(var(--accent-foreground))]">
+                <Link href="https://github.com/tommyzki" target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2 h-5 w-5" />
+                  Visit my GitHub
+                </Link>
+              </Button>
             </div>
-            <Button asChild variant="default" size="lg" className="mt-8 bg-accent text-accent-foreground border-accent-foreground shadow-[2px_2px_0px_hsl(var(--accent-foreground))] hover:shadow-[3px_3px_0px_hsl(var(--accent-foreground))] active:shadow-[1px_1px_0px_hsl(var(--accent-foreground))]">
-              <Link href="https://github.com/tommyzki" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-5 w-5" />
-                Visit my GitHub
-              </Link>
-            </Button>
           </CardContent>
         </Card>
       </div>
