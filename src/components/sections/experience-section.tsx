@@ -38,10 +38,10 @@ export default function ExperienceSection() {
     <section id="experience" className="py-12 md:py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">Professional Experience</h2>
-        <div className="relative space-y-12 before:absolute before:inset-y-0 before:left-0 before:ml-[calc(theme(spacing.5)_+_theme(spacing.10)/2_-_1px)] before:h-full before:w-0.5 before:bg-foreground/30 md:before:left-1/2 md:before:-translate-x-1/2 md:before:ml-0">
+        <div className="relative space-y-12">
           {experiences.map((exp, index) => (
             <div key={index} className="relative flex items-start md:items-center gap-4 md:gap-8 group">
-              <div className="hidden md:block w-1/2 md:pr-8 text-right">
+              <div className="hidden md:block w-1/2 text-right">
                 {index % 2 === 0 && (
                   <Card className="hover:shadow-pixel-lg-hover transition-shadow duration-300">
                     <ExperienceCardContent {...exp} />
@@ -49,11 +49,11 @@ export default function ExperienceSection() {
                 )}
               </div>
               
-              <div className="absolute left-5 top-1 z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary shadow-pixel border-2 border-primary-foreground md:relative md:left-auto md:top-auto md:translate-x-[-50%]">
+              <div className="absolute z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary shadow-pixel border-2 border-primary-foreground md:relative ">
                 {exp.icon}
               </div>
 
-              <div className={`w-full pl-[calc(theme(spacing.5)_+theme(spacing.10)_+theme(spacing.4))] md:w-1/2 ${index % 2 === 0 && !isMobile ? 'md:pl-0' : 'md:pl-8'}`}>
+              <div className={`w-full pl-16 md:w-1/2 ${index % 2 === 0 ? '' : 'md:pl-0'}`}>
                 {isMobile ? (
                   <Card className="hover:shadow-pixel-lg-hover transition-shadow duration-300">
                     <ExperienceCardContent {...exp} />

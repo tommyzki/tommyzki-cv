@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Gamepad2 } from 'lucide-react';
 
 const navItems = [
@@ -38,7 +38,12 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-background border-foreground border-l-2">
-              <div className="flex flex-col gap-4 p-6">
+              <SheetHeader>
+                <SheetTitle>
+                  <span className="sr-only">Main Navigation Menu</span>
+                </SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col gap-4 p-6 pt-2"> {/* Adjusted padding top after adding SheetHeader */}
                 <Link href="#home" className="flex items-center gap-2 text-lg font-bold text-foreground mb-4">
                   <Gamepad2 className="h-7 w-7 text-primary" />
                   Pixel Portfolio
