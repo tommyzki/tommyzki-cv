@@ -31,7 +31,7 @@ const projectData: ProjectCategory[] = [
         title: 'tommyzki-cv (Portfolio)',
         description: 'My upcoming personal portfolio website, planned to be hosted on GitHub Pages, showcasing my journey and projects.',
         link: 'https://tommyzki.github.io/',
-        repo: 'https://github.com/tommyzki/tommyzki-cv', 
+        repo: 'https://github.com/tommyzki/tommyzki-cv',
         status: 'Coming Soon',
         tags: ['Next.js', 'React', 'TailwindCSS'],
         imagePlaceholder: 'https://placehold.co/600x400.png',
@@ -41,7 +41,7 @@ const projectData: ProjectCategory[] = [
         title: 'tommyzki-ui',
         description: 'A library of reusable web components generated using StencilJS. These components are framework-agnostic and can be used in React, Angular, Vue, or vanilla HTML projects.',
         link: 'https://tommyzki.github.io/tommyzki-ui',
-        repo: 'https://github.com/tommyzki/tommyzki-ui', 
+        repo: 'https://github.com/tommyzki/tommyzki-ui',
         status: 'Deployed',
         tags: ['StencilJS', 'Web Components', 'UI Library'],
         imagePlaceholder: 'https://placehold.co/600x400.png',
@@ -58,7 +58,7 @@ const projectData: ProjectCategory[] = [
         description: 'Developed key frontend modules for a B2B data analytics platform using Angular, enabling clients to gain insights from large datasets. Focused on component reusability and performance.',
         status: 'Deployed',
         tags: ['Angular', 'Data Visualization', 'TypeScript', 'RxJS'],
-        repo: 'https://github.com/tommyzki/dummy-company-project-1', 
+        repo: 'https://github.com/tommyzki/dummy-company-project-1',
         imagePlaceholder: 'https://placehold.co/600x400.png',
         imageAiHint: 'analytics dashboard'
       },
@@ -67,7 +67,7 @@ const projectData: ProjectCategory[] = [
         description: 'Built responsive UI/UX features for a high-traffic e-commerce website using React and Next.js. Implemented state management solutions and integrated with various third-party APIs.',
         status: 'Deployed',
         tags: ['React', 'Next.js', 'State Management', 'E-commerce'],
-        link: 'https://example-company.com/project-showcase/ecomm', 
+        link: 'https://example-company.com/project-showcase/ecomm',
         imagePlaceholder: 'https://placehold.co/600x400.png',
         imageAiHint: 'online store shopping'
       },
@@ -80,6 +80,38 @@ const projectData: ProjectCategory[] = [
         imageAiHint: 'workflow tool chart'
       }
     ]
+  },
+  {
+    categoryTitle: 'Medium Articles',
+    projects: [
+      {
+        title: 'Exploring Advanced React Patterns',
+        description: 'A deep dive into advanced React patterns and techniques for building scalable and maintainable applications. Coming soon to Medium!',
+        link: '#', // Placeholder link
+        status: 'Coming Soon',
+        tags: ['React', 'Frontend', 'Tech Article'],
+        imagePlaceholder: 'https://placehold.co/600x400.png',
+        imageAiHint: 'article code abstract'
+      },
+      {
+        title: 'The Future of Web Components',
+        description: 'An exploration of Web Components, their current state, and their potential impact on the future of web development. Stay tuned!',
+        link: '#', // Placeholder link
+        status: 'Coming Soon',
+        tags: ['Web Components', 'Frontend', 'Opinion'],
+        imagePlaceholder: 'https://placehold.co/600x400.png',
+        imageAiHint: 'technology future'
+      },
+      {
+        title: 'Becoming a PMO/BA from a Developer Background',
+        description: 'Sharing insights and my journey on transitioning from a frontend developer role to project management or business analysis. Article in progress.',
+        link: '#', // Placeholder link
+        status: 'Coming Soon',
+        tags: ['Career', 'Project Management', 'Business Analysis'],
+        imagePlaceholder: 'https://placehold.co/600x400.png',
+        imageAiHint: 'career path diagram'
+      }
+    ]
   }
 ];
 
@@ -89,7 +121,7 @@ export default function ProjectsSection() {
       <div className="container mx-auto px-4">
         <Card>
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl md:text-3xl font-bold">My Projects</CardTitle>
+            <CardTitle className="text-2xl md:text-3xl font-bold">My Projects & Articles</CardTitle>
           </CardHeader>
           <CardContent className="space-y-12">
             {projectData.map((category) => (
@@ -103,7 +135,7 @@ export default function ProjectsSection() {
                       <CardHeader>
                         <div className="flex justify-between items-start">
                           <CardTitle className="text-lg md:text-xl mb-1">{project.title}</CardTitle>
-                          <Badge 
+                          <Badge
                             variant={project.status === 'Deployed' ? 'default' : project.status === 'Coming Soon' ? 'secondary' : 'outline'}
                             className="text-xs whitespace-nowrap"
                           >
@@ -113,9 +145,9 @@ export default function ProjectsSection() {
                       </CardHeader>
                       <CardContent className="flex flex-col flex-grow space-y-3">
                         <div className="relative w-full h-40 mb-2 overflow-hidden border-2 shadow-pixel border-foreground">
-                          <Image 
-                            src={project.imagePlaceholder} 
-                            alt={project.title} 
+                          <Image
+                            src={project.imagePlaceholder}
+                            alt={project.title}
                             fill
                             className="object-cover"
                             data-ai-hint={project.imageAiHint}
@@ -126,16 +158,23 @@ export default function ProjectsSection() {
                         </p>
                         {project.tags && project.tags.length > 0 && (
                           <div className="mb-2 pt-1">
-                            <h4 className="text-xs font-semibold mb-1.5 text-foreground">Technologies:</h4>
+                            <h4 className="text-xs font-semibold mb-1.5 text-foreground">Keywords:</h4>
                             <div className="flex flex-wrap gap-1.5">
                               {project.tags.map(tag => <Badge key={tag} variant="outline" className="text-xs">{tag}</Badge>)}
                             </div>
                           </div>
                         )}
                         <div className="flex gap-2 mt-auto pt-2">
-                          {project.link && (
+                          {project.link && project.link !== '#' && (
                             <Button asChild variant="outline" size="sm" className="flex-1">
-                              <Link href={project.link} target="_blank" rel="noopener noreferrer">View Live</Link>
+                              <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                                {category.categoryTitle === 'Medium Articles' ? 'Read Article' : 'View Live'}
+                              </Link>
+                            </Button>
+                          )}
+                           {project.link && project.link === '#' && category.categoryTitle === 'Medium Articles' && (
+                            <Button variant="outline" size="sm" className="flex-1" disabled>
+                              Read Article (Soon)
                             </Button>
                           )}
                           {project.repo && (
@@ -166,3 +205,4 @@ export default function ProjectsSection() {
     </section>
   );
 }
+
