@@ -20,6 +20,7 @@ interface Project {
 interface ProjectCategory {
   categoryTitle: string;
   projects: Project[];
+  showGithubButton?: boolean;
 }
 
 const projectData: ProjectCategory[] = [
@@ -30,7 +31,7 @@ const projectData: ProjectCategory[] = [
         title: 'tommyzki-cv (Portfolio)',
         description: 'My upcoming personal portfolio website, planned to be hosted on GitHub Pages, showcasing my journey and projects.',
         link: 'https://tommyzki.github.io/',
-        repo: 'https://github.com/tommyzki/tommyzki-cv', // Placeholder repo
+        repo: 'https://github.com/tommyzki/tommyzki-cv', 
         status: 'Coming Soon',
         tags: ['Next.js', 'React', 'TailwindCSS'],
         imagePlaceholder: 'https://placehold.co/600x400.png',
@@ -40,13 +41,14 @@ const projectData: ProjectCategory[] = [
         title: 'tommyzki-ui',
         description: 'A library of reusable web components generated using StencilJS. These components are framework-agnostic and can be used in React, Angular, Vue, or vanilla HTML projects.',
         link: 'https://tommyzki.github.io/tommyzki-ui',
-        repo: 'https://github.com/tommyzki/tommyzki-ui', // Placeholder repo
+        repo: 'https://github.com/tommyzki/tommyzki-ui', 
         status: 'Deployed',
         tags: ['StencilJS', 'Web Components', 'UI Library'],
         imagePlaceholder: 'https://placehold.co/600x400.png',
         imageAiHint: 'ui components code'
       },
-    ]
+    ],
+    showGithubButton: true,
   },
   {
     categoryTitle: 'Company Projects (Conceptual Examples)',
@@ -146,16 +148,18 @@ export default function ProjectsSection() {
                     </Card>
                   ))}
                 </div>
+                {category.showGithubButton && (
+                  <div className="text-center pt-8">
+                    <Button asChild variant="default" size="lg" className="bg-accent text-accent-foreground border-accent-foreground shadow-[2px_2px_0px_hsl(var(--accent-foreground))] hover:shadow-[3px_3px_0px_hsl(var(--accent-foreground))] active:shadow-[1px_1px_0px_hsl(var(--accent-foreground))]">
+                      <Link href="https://github.com/tommyzki" target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-5 w-5" />
+                        Visit my personal GitHub
+                      </Link>
+                    </Button>
+                  </div>
+                )}
               </div>
             ))}
-            <div className="text-center pt-8">
-              <Button asChild variant="default" size="lg" className="bg-accent text-accent-foreground border-accent-foreground shadow-[2px_2px_0px_hsl(var(--accent-foreground))] hover:shadow-[3px_3px_0px_hsl(var(--accent-foreground))] active:shadow-[1px_1px_0px_hsl(var(--accent-foreground))]">
-                <Link href="https://github.com/tommyzki" target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-5 w-5" />
-                  Visit my GitHub
-                </Link>
-              </Button>
-            </div>
           </CardContent>
         </Card>
       </div>
