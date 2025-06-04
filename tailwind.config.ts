@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['"Space Grotesk"', 'sans-serif'],
+        headline: ['"Space Grotesk"', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -68,8 +68,15 @@ export default {
       },
       borderRadius: {
         lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        md: 'calc(var(--radius) - 0px)', // effectively var(--radius)
+        sm: 'calc(var(--radius) - 0px)', // effectively var(--radius)
+      },
+      boxShadow: {
+        pixel: '2px 2px 0px 0px hsl(var(--foreground))',
+        'pixel-lg': '4px 4px 0px 0px hsl(var(--foreground))',
+        'pixel-hover': '3px 3px 0px 0px hsl(var(--foreground))',
+        'pixel-lg-hover': '5px 5px 0px 0px hsl(var(--foreground))',
+        'pixel-active': '1px 1px 0px 0px hsl(var(--foreground))',
       },
       keyframes: {
         'accordion-down': {
