@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Pixel Portfolio | Tommy Miyazaki',
+  title: 'Tommy Portfolio | Tommy Miyazaki',
   description: 'Tommy Miyazaki - Frontend Developer specializing in Angular & React. Building Responsive & Scalable Web Applications.',
 };
 
