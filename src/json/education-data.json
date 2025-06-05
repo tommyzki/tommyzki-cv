@@ -1,0 +1,19 @@
+
+[
+  {
+    "institution": "Multimedia Nusantara University",
+    "period": "2014 – 2018",
+    "title": "Bachelor’s in Computer Science",
+    "description": "Gained a strong foundation in software development, data structures, algorithms, and computer systems. Completed various projects focusing on web and application development, culminating in a comprehensive final year project.",
+    "details": ["GPA: 3.35"],
+    "iconName": "GraduationCap"
+  },
+  {
+    "institution": "Yoshida Gakkou 吉田 学校",
+    "period": "2021",
+    "title": "JFT Basic A2 Certificate",
+    "description": "Successfully completed an intensive Japanese language program, mastering foundational grammar, vocabulary, and conversational skills. Achieved JFT Basic A2 certification, demonstrating proficiency in basic Japanese communication.",
+    "details": ["Score: 100 points"],
+    "iconName": "Languages"
+  }
+]

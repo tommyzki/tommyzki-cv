@@ -1,0 +1,42 @@
+
+[
+  {
+    "title": "Programming Languages",
+    "categoryIconName": "Braces",
+    "skills": [
+      { "name": "JavaScript", "iconName": "Braces" },
+      { "name": "TypeScript", "iconName": "Braces" },
+      { "name": "HTML5", "iconName": "CodeXml" },
+      { "name": "CSS", "iconName": "Palette" },
+      { "name": "SCSS", "iconName": "Palette" },
+      { "name": "Python", "iconName": "Terminal" }
+    ]
+  },
+  {
+    "title": "Frameworks & Libraries",
+    "categoryIconName": "Cog",
+    "skills": [
+      { "name": "Angular (4 years)", "iconName": "Cog" },
+      { "name": "React (2 years)", "iconName": "Cog" },
+      { "name": "Stencil", "iconName": "Cog" }
+    ]
+  },
+  {
+    "title": "Tools & Methodologies",
+    "categoryIconName": "Cog",
+    "skills": [
+      { "name": "Git", "iconName": "GitFork" },
+      { "name": "REST APIs", "iconName": "Database" },
+      { "name": "Agile Methodologies", "iconName": "Users2" }
+    ]
+  },
+  {
+    "title": "Languages Spoken",
+    "categoryIconName": "Globe2",
+    "skills": [
+      { "name": "Indonesian (Native)", "iconName": "Languages" },
+      { "name": "English (Fluent)", "iconName": "Languages" },
+      { "name": "Japanese (JFT A2 Certified)", "iconName": "Languages" }
+    ]
+  }
+]

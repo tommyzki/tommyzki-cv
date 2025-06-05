@@ -1,70 +1,23 @@
 
 'use client';
 
+import type React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Github, Linkedin, Mail, Phone, MapPin, Instagram, Facebook, Twitter, Users } from 'lucide-react';
 import Link from 'next/link';
+import contactData from '@/json/contact-data.json';
 
-const formalContacts = [
-  {
-    href: 'mailto:miyazaki.tommy@gmail.com',
-    icon: <Mail className="h-5 w-5 text-primary group-hover:animate-ping" />,
-    label: 'miyazaki.tommy@gmail.com',
-    ariaLabel: 'Email Tommy Miyazaki',
-  },
-  {
-    href: 'tel:+628111478820',
-    icon: <Phone className="h-5 w-5 text-primary group-hover:animate-ping" />,
-    label: '+62 811 147 8820',
-    ariaLabel: 'Call Tommy Miyazaki',
-  },
-  {
-    href: 'https://linkedin.com/in/tommyzki',
-    icon: <Linkedin className="h-5 w-5 text-primary group-hover:animate-ping" />,
-    label: 'linkedin.com/in/tommyzki',
-    ariaLabel: "Tommy Miyazaki's LinkedIn Profile",
-    target: '_blank',
-  },
-  {
-    href: 'https://github.com/tommyzki',
-    icon: <Github className="h-5 w-5 text-primary group-hover:animate-ping" />,
-    label: 'github.com/tommyzki',
-    ariaLabel: "Tommy Miyazaki's GitHub Profile",
-    target: '_blank',
-  },
-];
-
-const socialMediaLinks = [
-  {
-    href: 'https://instagram.com/yourusername', // Placeholder
-    icon: <Instagram className="h-5 w-5 text-primary group-hover:animate-ping" />,
-    label: 'Instagram',
-    ariaLabel: "Tommy Miyazaki's Instagram Profile",
-    target: '_blank',
-  },
-  {
-    href: 'https://facebook.com/yourusername', // Placeholder
-    icon: <Facebook className="h-5 w-5 text-primary group-hover:animate-ping" />,
-    label: 'Facebook',
-    ariaLabel: "Tommy Miyazaki's Facebook Profile",
-    target: '_blank',
-  },
-  {
-    href: 'https://twitter.com/yourusername', // Placeholder
-    icon: <Twitter className="h-5 w-5 text-primary group-hover:animate-ping" />,
-    label: 'X (Twitter)',
-    ariaLabel: "Tommy Miyazaki's X (Twitter) Profile",
-    target: '_blank',
-  },
-  {
-    href: 'https://tiktok.com/@yourusername', // Placeholder
-    icon: <Users className="h-5 w-5 text-primary group-hover:animate-ping" />, // Using Users as a generic social icon
-    label: 'TikTok',
-    ariaLabel: "Tommy Miyazaki's TikTok Profile",
-    target: '_blank',
-  },
-];
-
+const iconMap: Record<string, React.ElementType> = {
+  Mail,
+  Phone,
+  Linkedin,
+  Github,
+  Instagram,
+  Facebook,
+  Twitter,
+  Users, // For TikTok placeholder
+  MapPin,
+};
 
 export default function ContactSection() {
   return (
@@ -88,19 +41,22 @@ export default function ContactSection() {
                   </p>
                 </div>
                 <div className="space-y-4">
-                  {formalContacts.map((contact) => (
-                    <Link
-                      key={contact.label}
-                      href={contact.href}
-                      target={contact.target || '_self'}
-                      rel={contact.target === '_blank' ? 'noopener noreferrer' : undefined}
-                      aria-label={contact.ariaLabel}
-                      className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
-                    >
-                      {contact.icon}
-                      <span>{contact.label}</span>
-                    </Link>
-                  ))}
+                  {contactData.formalContacts.map((contact) => {
+                    const IconComponent = contact.iconName ? iconMap[contact.iconName] : Mail;
+                    return (
+                      <Link
+                        key={contact.label}
+                        href={contact.href}
+                        target={contact.target || '_self'}
+                        rel={contact.target === '_blank' ? 'noopener noreferrer' : undefined}
+                        aria-label={contact.ariaLabel}
+                        className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
+                      >
+                        <IconComponent className="h-5 w-5 text-primary group-hover:animate-ping" />
+                        <span>{contact.label}</span>
+                      </Link>
+                    );
+                  })}
                   <div className="flex items-center gap-3 text-foreground">
                     <MapPin className="h-5 w-5 text-primary" />
                     <span>Tangerang, Indonesia</span>
@@ -117,19 +73,22 @@ export default function ContactSection() {
                   </p>
                 </div>
                 <div className="space-y-4">
-                  {socialMediaLinks.map((social) => (
-                    <Link
-                      key={social.label}
-                      href={social.href}
-                      target={social.target || '_self'}
-                      rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
-                      aria-label={social.ariaLabel}
-                      className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
-                    >
-                      {social.icon}
-                      <span>{social.label}</span>
-                    </Link>
-                  ))}
+                  {contactData.socialMediaLinks.map((social) => {
+                    const IconComponent = social.iconName ? iconMap[social.iconName] : Users; // Default
+                    return (
+                      <Link
+                        key={social.label}
+                        href={social.href}
+                        target={social.target || '_self'}
+                        rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
+                        aria-label={social.ariaLabel}
+                        className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
+                      >
+                        <IconComponent className="h-5 w-5 text-primary group-hover:animate-ping" />
+                        <span>{social.label}</span>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </div>

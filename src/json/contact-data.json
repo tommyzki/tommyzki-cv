@@ -1,0 +1,61 @@
+
+{
+  "formalContacts": [
+    {
+      "href": "mailto:miyazaki.tommy@gmail.com",
+      "iconName": "Mail",
+      "label": "miyazaki.tommy@gmail.com",
+      "ariaLabel": "Email Tommy Miyazaki"
+    },
+    {
+      "href": "tel:+628111478820",
+      "iconName": "Phone",
+      "label": "+62 811 147 8820",
+      "ariaLabel": "Call Tommy Miyazaki"
+    },
+    {
+      "href": "https://linkedin.com/in/tommyzki",
+      "iconName": "Linkedin",
+      "label": "linkedin.com/in/tommyzki",
+      "ariaLabel": "Tommy Miyazaki's LinkedIn Profile",
+      "target": "_blank"
+    },
+    {
+      "href": "https://github.com/tommyzki",
+      "iconName": "Github",
+      "label": "github.com/tommyzki",
+      "ariaLabel": "Tommy Miyazaki's GitHub Profile",
+      "target": "_blank"
+    }
+  ],
+  "socialMediaLinks": [
+    {
+      "href": "https://instagram.com/yourusername",
+      "iconName": "Instagram",
+      "label": "Instagram",
+      "ariaLabel": "Tommy Miyazaki's Instagram Profile",
+      "target": "_blank"
+    },
+    {
+      "href": "https://facebook.com/yourusername",
+      "iconName": "Facebook",
+      "label": "Facebook",
+      "ariaLabel": "Tommy Miyazaki's Facebook Profile",
+      "target": "_blank"
+    },
+    {
+      "href": "https://twitter.com/yourusername",
+      "iconName": "Twitter",
+      "label": "X (Twitter)",
+      "ariaLabel": "Tommy Miyazaki's X (Twitter) Profile",
+      "target": "_blank"
+    },
+    {
+      "href": "https://tiktok.com/@yourusername",
+      "iconName": "Users",
+      "label": "TikTok",
+      "ariaLabel": "Tommy Miyazaki's TikTok Profile",
+      "target": "_blank"
+    }
+  ]
+}

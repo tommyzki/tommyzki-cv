@@ -1,0 +1,94 @@
+
+[
+  {
+    "categoryTitle": "Personal Projects",
+    "projects": [
+      {
+        "title": "tommyzki-cv (Portfolio)",
+        "description": "My upcoming personal portfolio website, planned to be hosted on GitHub Pages, showcasing my journey and projects.",
+        "link": "https://tommyzki.github.io/",
+        "repo": "https://github.com/tommyzki/tommyzki-cv",
+        "status": "Coming Soon",
+        "tags": ["Next.js", "React", "TailwindCSS"],
+        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imageAiHint": "portfolio website"
+      },
+      {
+        "title": "tommyzki-ui",
+        "description": "A library of reusable web components generated using StencilJS. These components are framework-agnostic and can be used in React, Angular, Vue, or vanilla HTML projects.",
+        "link": "https://tommyzki.github.io/tommyzki-ui",
+        "repo": "https://github.com/tommyzki/tommyzki-ui",
+        "status": "Deployed",
+        "tags": ["StencilJS", "Web Components", "UI Library"],
+        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imageAiHint": "ui components code"
+      }
+    ],
+    "showGithubButton": true
+  },
+  {
+    "categoryTitle": "Company Projects (Conceptual Examples)",
+    "projects": [
+      {
+        "title": "Client Data Analytics Platform",
+        "description": "Developed key frontend modules for a B2B data analytics platform using Angular, enabling clients to gain insights from large datasets. Focused on component reusability and performance.",
+        "status": "Deployed",
+        "tags": ["Angular", "Data Visualization", "TypeScript", "RxJS"],
+        "repo": "https://github.com/tommyzki/dummy-company-project-1",
+        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imageAiHint": "analytics dashboard"
+      },
+      {
+        "title": "Mobile-First E-commerce Site",
+        "description": "Built responsive UI/UX features for a high-traffic e-commerce website using React and Next.js. Implemented state management solutions and integrated with various third-party APIs.",
+        "status": "Deployed",
+        "tags": ["React", "Next.js", "State Management", "E-commerce"],
+        "link": "https://example-company.com/project-showcase/ecomm",
+        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imageAiHint": "online store shopping"
+      },
+      {
+        "title": "Internal Workflow Automation Tool",
+        "description": "Designed and implemented an internal tool with Angular to automate critical business workflows, significantly improving operational efficiency and reducing manual data entry.",
+        "status": "Deployed",
+        "tags": ["Angular", "Internal Tools", "Automation"],
+        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imageAiHint": "workflow tool chart"
+      }
+    ]
+  },
+  {
+    "categoryTitle": "Medium Articles",
+    "projects": [
+      {
+        "title": "Exploring Advanced React Patterns",
+        "description": "A deep dive into advanced React patterns and techniques for building scalable and maintainable applications. Coming soon to Medium!",
+        "link": "#",
+        "status": "Coming Soon",
+        "tags": ["React", "Frontend", "Tech Article"],
+        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imageAiHint": "article code abstract"
+      },
+      {
+        "title": "The Future of Web Components",
+        "description": "An exploration of Web Components, their current state, and their potential impact on the future of web development. Stay tuned!",
+        "link": "#",
+        "status": "Coming Soon",
+        "tags": ["Web Components", "Frontend", "Opinion"],
+        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imageAiHint": "technology future"
+      },
+      {
+        "title": "Becoming a PMO/BA from a Developer Background",
+        "description": "Sharing insights and my journey on transitioning from a frontend developer role to project management or business analysis. Article in progress.",
+        "link": "#",
+        "status": "Coming Soon",
+        "tags": ["Career", "Project Management", "Business Analysis"],
+        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imageAiHint": "career path diagram"
+      }
+    ],
+    "showMediumButton": true,
+    "mediumLink": "https://medium.com/@miyazaki.tommy"
+  }
+]
