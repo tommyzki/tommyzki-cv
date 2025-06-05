@@ -1,7 +1,8 @@
 {
   "name": "tommyzki-cv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
+  "basePath": "/tommyzki-cv",
   "scripts": {
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
