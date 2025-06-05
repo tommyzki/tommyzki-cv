@@ -1,4 +1,3 @@
-
 [
   {
     "categoryTitle": "Personal Projects",
@@ -6,11 +5,11 @@
       {
         "title": "tommyzki-cv (Portfolio)",
         "description": "My upcoming personal portfolio website, planned to be hosted on GitHub Pages, showcasing my journey and projects.",
-        "link": "https://tommyzki.github.io/",
+        "link": "https://tommyzki-cv.vercel.app/",
         "repo": "https://github.com/tommyzki/tommyzki-cv",
-        "status": "Coming Soon",
+        "status": "Deployed",
         "tags": ["Next.js", "React", "TailwindCSS"],
-        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imagePlaceholder": "https://miro.medium.com/v2/resize:fit:1400/1*yGC_mehBZmw2G_YredP57g.png",
         "imageAiHint": "portfolio website"
       },
       {
@@ -61,13 +60,22 @@
     "categoryTitle": "Medium Articles",
     "projects": [
       {
-        "title": "Exploring Advanced React Patterns",
-        "description": "A deep dive into advanced React patterns and techniques for building scalable and maintainable applications. Coming soon to Medium!",
-        "link": "#",
-        "status": "Coming Soon",
-        "tags": ["React", "Frontend", "Tech Article"],
-        "imagePlaceholder": "https://placehold.co/600x400.png",
-        "imageAiHint": "article code abstract"
+        "title": "JavaScript Frameworks Evolution: jQuery to Angular 18",
+        "description": "JavaScript frameworks have dramatically evolved over the years, shaping how we build web applications.",
+        "link": "https://insight.akarinti.tech/javascript-frameworks-evolution-jquery-to-angular-18-987fb3d2a3d7",
+        "status": "Published",
+        "tags": ["Angular", "Frontend", "JavaScript", "History"],
+        "imagePlaceholder": "https://miro.medium.com/v2/resize:fit:1400/1*VnD4XngDb8AmCQfS8jDJew.png",
+        "imageAiHint": "angular framework evolution"
+      },
+      {
+        "title": "No Code, No Problem: How AI Just Killed the Frontend Developer",
+        "description": "Built a full website with just a prompt — no code. Is this the end of software engineering as we know it? Welcome to the AI dev era.",
+        "link": "https://tommyzki.medium.com/no-code-no-problem-how-ai-just-killed-the-frontend-developer-c0ca8bc6ebee",
+        "status": "Published",
+        "tags": ["AI", "Frontend", "Developer", "Prompt Engineering"],
+        "imagePlaceholder": "https://miro.medium.com/v2/resize:fit:1400/1*yGC_mehBZmw2G_YredP57g.png",
+        "imageAiHint": "ai frontend development"
       },
       {
         "title": "The Future of Web Components",

@@ -28,7 +28,7 @@ export default function ProjectsSection() {
                         <div className="flex justify-between items-start">
                           <CardTitle className="text-lg md:text-xl mb-1">{project.title}</CardTitle>
                           <Badge
-                            variant={project.status === 'Deployed' ? 'default' : project.status === 'Coming Soon' ? 'secondary' : 'outline'}
+                            variant={(project.status === 'Deployed' || project.status === 'Published') ? 'default' : project.status === 'Coming Soon' ? 'secondary' : 'outline'}
                             className="text-xs whitespace-nowrap"
                           >
                             {project.status}
