@@ -30,28 +30,28 @@
   ],
   "socialMediaLinks": [
     {
-      "href": "https://instagram.com/yourusername",
+      "href": "https://instagram.com/tommyzki",
       "iconName": "Instagram",
       "label": "Instagram",
       "ariaLabel": "Tommy Miyazaki's Instagram Profile",
       "target": "_blank"
     },
     {
-      "href": "https://facebook.com/yourusername",
+      "href": "https://facebook.com/tommyzki",
       "iconName": "Facebook",
       "label": "Facebook",
       "ariaLabel": "Tommy Miyazaki's Facebook Profile",
       "target": "_blank"
     },
     {
-      "href": "https://twitter.com/yourusername",
+      "href": "https://twitter.com/tommyzki",
       "iconName": "Twitter",
       "label": "X (Twitter)",
       "ariaLabel": "Tommy Miyazaki's X (Twitter) Profile",
       "target": "_blank"
     },
     {
-      "href": "https://tiktok.com/@yourusername",
+      "href": "https://tiktok.com/@tommyzki",
       "iconName": "Users",
       "label": "TikTok",
       "ariaLabel": "Tommy Miyazaki's TikTok Profile",
