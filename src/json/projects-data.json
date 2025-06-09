@@ -1,3 +1,4 @@
+
 [
   {
     "categoryTitle": "Personal Projects",
@@ -9,7 +10,7 @@
         "repo": "https://github.com/tommyzki/tommyzki-cv",
         "status": "Deployed",
         "tags": ["Next.js", "React", "TailwindCSS"],
-        "imagePlaceholder": "https://miro.medium.com/v2/resize:fit:1400/1*yGC_mehBZmw2G_YredP57g.png",
+        "imagePlaceholder": "/images/project-portfolio.png",
         "imageAiHint": "portfolio website"
       },
       {
@@ -19,8 +20,8 @@
         "repo": "https://github.com/tommyzki/tommyzki-ui",
         "status": "Deployed",
         "tags": ["StencilJS", "Web Components", "UI Library"],
-        "imagePlaceholder": "https://placehold.co/600x400.png",
-        "imageAiHint": "ui components code"
+        "imagePlaceholder": "/images/project-tommyzki-ui.png",
+        "imageAiHint": "ui components"
       }
     ],
     "showGithubButton": true
@@ -34,7 +35,7 @@
         "status": "Deployed",
         "tags": ["Angular", "Data Visualization", "TypeScript", "RxJS"],
         "repo": "https://github.com/tommyzki/dummy-company-project-1",
-        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imagePlaceholder": "/images/project-company-analytics.png",
         "imageAiHint": "analytics dashboard"
       },
       {
@@ -43,16 +44,16 @@
         "status": "Deployed",
         "tags": ["React", "Next.js", "State Management", "E-commerce"],
         "link": "https://example-company.com/project-showcase/ecomm",
-        "imagePlaceholder": "https://placehold.co/600x400.png",
-        "imageAiHint": "online store shopping"
+        "imagePlaceholder": "/images/project-company-ecommerce.png",
+        "imageAiHint": "online store"
       },
       {
         "title": "Internal Workflow Automation Tool",
         "description": "Designed and implemented an internal tool with Angular to automate critical business workflows, significantly improving operational efficiency and reducing manual data entry.",
         "status": "Deployed",
         "tags": ["Angular", "Internal Tools", "Automation"],
-        "imagePlaceholder": "https://placehold.co/600x400.png",
-        "imageAiHint": "workflow tool chart"
+        "imagePlaceholder": "/images/project-company-workflow.png",
+        "imageAiHint": "workflow tool"
       }
     ]
   },
@@ -65,8 +66,8 @@
         "link": "https://insight.akarinti.tech/javascript-frameworks-evolution-jquery-to-angular-18-987fb3d2a3d7",
         "status": "Published",
         "tags": ["Angular", "Frontend", "JavaScript", "History"],
-        "imagePlaceholder": "https://miro.medium.com/v2/resize:fit:1400/1*VnD4XngDb8AmCQfS8jDJew.png",
-        "imageAiHint": "angular framework evolution"
+        "imagePlaceholder": "/images/article-js-evolution.png",
+        "imageAiHint": "framework evolution"
       },
       {
         "title": "No Code, No Problem: How AI Just Killed the Frontend Developer",
@@ -74,8 +75,8 @@
         "link": "https://tommyzki.medium.com/no-code-no-problem-how-ai-just-killed-the-frontend-developer-c0ca8bc6ebee",
         "status": "Published",
         "tags": ["AI", "Frontend", "Developer", "Prompt Engineering"],
-        "imagePlaceholder": "https://miro.medium.com/v2/resize:fit:1400/1*yGC_mehBZmw2G_YredP57g.png",
-        "imageAiHint": "ai frontend development"
+        "imagePlaceholder": "/images/article-ai-frontend.png",
+        "imageAiHint": "ai development"
       },
       {
         "title": "The Future of Web Components",
@@ -83,7 +84,7 @@
         "link": "#",
         "status": "Coming Soon",
         "tags": ["Web Components", "Frontend", "Opinion"],
-        "imagePlaceholder": "https://placehold.co/600x400.png",
+        "imagePlaceholder": "/images/article-web-components.png",
         "imageAiHint": "technology future"
       },
       {
@@ -92,8 +93,8 @@
         "link": "#",
         "status": "Coming Soon",
         "tags": ["Career", "Project Management", "Business Analysis"],
-        "imagePlaceholder": "https://placehold.co/600x400.png",
-        "imageAiHint": "career path diagram"
+        "imagePlaceholder": "/images/article-career-pmo.png",
+        "imageAiHint": "career diagram"
       }
     ],
     "showMediumButton": true,
