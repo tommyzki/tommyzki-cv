@@ -1,33 +1,49 @@
 
 [
   {
-    "title": "Programming Languages",
-    "categoryIconName": "Braces",
+    "title": "Project & Team Management",
+    "categoryIconName": "ClipboardList",
     "skills": [
-      { "name": "JavaScript", "iconName": "Braces" },
-      { "name": "TypeScript", "iconName": "Braces" },
-      { "name": "HTML5", "iconName": "CodeXml" },
-      { "name": "CSS", "iconName": "Palette" },
-      { "name": "SCSS", "iconName": "Palette" },
-      { "name": "Python", "iconName": "Terminal" }
-    ]
-  },
-  {
-    "title": "Frameworks & Libraries",
-    "categoryIconName": "Cog",
-    "skills": [
-      { "name": "Angular (4 years)", "iconName": "Cog" },
-      { "name": "React (2 years)", "iconName": "Cog" },
-      { "name": "Stencil", "iconName": "Cog" }
+      { "name": "Project Management", "iconName": "Users2" },
+      { "name": "Team Leadership", "iconName": "Users2" },
+      { "name": "Timeline & Resource Planning", "iconName": "Users2" },
+      { "name": "Client Relationship Management", "iconName": "Users2" },
+      { "name": "Risk & Issue Management", "iconName": "Users2" },
+      { "name": "Stakeholder Communication", "iconName": "Users2" }
     ]
   },
   {
     "title": "Tools & Methodologies",
-    "categoryIconName": "Cog",
+    "categoryIconName": "Settings",
     "skills": [
+      { "name": "Agile / Scrum", "iconName": "Users2" },
+      { "name": "Jira", "iconName": "Users2" },
+      { "name": "Confluence", "iconName": "Users2" },
       { "name": "Git", "iconName": "GitFork" },
-      { "name": "REST APIs", "iconName": "Database" },
-      { "name": "Agile Methodologies", "iconName": "Users2" }
+      { "name": "REST APIs", "iconName": "Database" }
+    ]
+  },
+  {
+    "title": "Frontend & Technical Skills",
+    "categoryIconName": "Braces",
+    "skills": [
+      { "name": "JavaScript", "iconName": "Braces" },
+      { "name": "TypeScript", "iconName": "Braces" },
+      { "name": "Angular (4 years)", "iconName": "Cog" },
+      { "name": "React (2 years)", "iconName": "Cog" },
+      { "name": "HTML5", "iconName": "CodeXml" },
+      { "name": "CSS / SCSS", "iconName": "Palette" }
+    ]
+  },
+  {
+    "title": "Soft Skills",
+    "categoryIconName": "UserCheck",
+    "skills": [
+      { "name": "Problem Solving", "iconName": "Lightbulb" },
+      { "name": "Critical Thinking", "iconName": "Brain" },
+      { "name": "Collaboration", "iconName": "Users" },
+      { "name": "Adaptability", "iconName": "Shuffle" },
+      { "name": "Decision Making", "iconName": "CheckCircle2" }
     ]
   },
   {

@@ -1,9 +1,17 @@
 
 [
   {
+    "role": "Project Manager",
+    "company": "PT. Akar Inti Technology",
+    "period": "2025 – Present",
+    "description": "From Frontend Developer to Project Manager, I lead teams from small to medium size, a small team of around 5 members and a medium-sized team of 10–15 people — to deliver high quality web solutions across multiple projects. I’m responsible for breaking down complex requirements into clear tasks, managing timelines and resources, and maintaining strong client relationships. I also oversee project quality, risk management, and cross-team collaboration to ensure smooth delivery and continuous improvement.",
+    "iconName": "Briefcase",
+    "highlights": ["Lead small and medium teams", "Ensure project delivery quality", "Manage timelines"]
+  },
+  {
     "role": "Senior Frontend Developer",
     "company": "PT. Akar Inti Technologi",
-    "period": "2024 – Present",
+    "period": "2024 – 2025",
     "description": "I’ve been working since January 2024, I’ve been deeply involved in developing and enhancing web applications using Angular and React. I take pride in leading the code quality process and managing incoming tickets and defects to ensure smooth development cycles. My dedication and performance were recognized when I was awarded Best Employee for Semester 1.",
     "iconName": "Briefcase",
     "highlights": ["Awarded Best Employee"]
