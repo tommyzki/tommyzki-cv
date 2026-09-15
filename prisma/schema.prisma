@@ -1,0 +1,140 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ---------------------------------------------------------------------------
+// Singleton content (one fixed row per model, id is always 1)
+// ---------------------------------------------------------------------------
+
+model Hero {
+  id          Int      @id @default(1)
+  name        String
+  tagline     String
+  aspirations String
+  imageSrc    String
+  imageAlt    String
+  imageAiHint String
+  buttons     Json
+  updatedAt   DateTime @updatedAt
+}
+
+model HeaderConfig {
+  id        Int      @id @default(1)
+  logoText  String
+  siteTitle String
+  navItems  Json
+  updatedAt DateTime @updatedAt
+}
+
+model About {
+  id         Int      @id @default(1)
+  title      String
+  paragraphs String[]
+  updatedAt  DateTime @updatedAt
+}
+
+model Footer {
+  id                 Int      @id @default(1)
+  copyrightName      String
+  rightsReservedText String
+  designNote         String
+  updatedAt          DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Repeatable content (ordered lists)
+// ---------------------------------------------------------------------------
+
+enum ContactGroup {
+  FORMAL
+  SOCIAL
+}
+
+model ContactLink {
+  id        Int          @id @default(autoincrement())
+  group     ContactGroup
+  order     Int
+  href      String
+  iconName  String
+  label     String
+  ariaLabel String
+  target    String?
+}
+
+model Experience {
+  id          Int      @id @default(autoincrement())
+  order       Int
+  role        String
+  company     String
+  period      String
+  description String
+  iconName    String
+  highlights  String[]
+}
+
+model Education {
+  id          Int      @id @default(autoincrement())
+  order       Int
+  institution String
+  period      String
+  title       String
+  description String
+  details     String[]
+  iconName    String
+}
+
+model SkillCategory {
+  id               Int     @id @default(autoincrement())
+  order            Int
+  title            String
+  categoryIconName String
+  skills           Skill[]
+}
+
+model Skill {
+  id         Int           @id @default(autoincrement())
+  order      Int
+  name       String
+  iconName   String
+  categoryId Int
+  category   SkillCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+}
+
+enum ProjectStatus {
+  DEPLOYED
+  PUBLISHED
+  COMING_SOON
+}
+
+model ProjectCategory {
+  id               Int       @id @default(autoincrement())
+  order            Int
+  categoryTitle    String
+  showGithubButton Boolean   @default(false)
+  showMediumButton Boolean   @default(false)
+  mediumLink       String?
+  projects         Project[]
+}
+
+model Project {
+  id               Int             @id @default(autoincrement())
+  order            Int
+  title            String
+  description      String
+  link             String?
+  repo             String?
+  status           ProjectStatus
+  tags             String[]
+  imagePlaceholder String
+  imageAiHint      String
+  categoryId       Int
+  category         ProjectCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+}

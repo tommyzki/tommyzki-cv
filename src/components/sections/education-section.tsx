@@ -2,23 +2,27 @@
 import type React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { GraduationCap, Languages } from 'lucide-react';
-import educationData from '@/json/education-data.json';
+import type { Education } from '@/generated/prisma/client';
 
 const iconMap: Record<string, React.ElementType> = {
   GraduationCap,
   Languages,
 };
 
-export default function EducationSection() {
+interface EducationSectionProps {
+  items: Education[];
+}
+
+export default function EducationSection({ items }: EducationSectionProps) {
   return (
     <section id="education" className="py-12 md:py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">Education</h2>
         <div className="max-w-2xl mx-auto space-y-8">
-          {educationData.map((item, index) => {
+          {items.map((item) => {
             const IconComponent = item.iconName ? iconMap[item.iconName] : GraduationCap; // Default icon
             return (
-              <Card key={index} className="border-2 border-foreground">
+              <Card key={item.id} className="border-2 border-foreground">
                 <CardHeader className="flex flex-row items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary shadow-pixel border-2 border-primary-foreground">
                     <IconComponent className="h-7 w-7 text-primary-foreground" />

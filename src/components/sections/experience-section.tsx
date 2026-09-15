@@ -5,7 +5,7 @@ import type React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Briefcase, Award, Smartphone, GraduationCap } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import experiencesData from '@/json/experience-data.json';
+import type { Experience } from '@/generated/prisma/client';
 
 const iconMap: Record<string, React.ElementType> = {
   Briefcase,
@@ -13,7 +13,11 @@ const iconMap: Record<string, React.ElementType> = {
   GraduationCap,
 };
 
-export default function ExperienceSection() {
+interface ExperienceSectionProps {
+  experiences: Experience[];
+}
+
+export default function ExperienceSection({ experiences }: ExperienceSectionProps) {
   const isMobile = useIsMobile();
 
   return (
@@ -21,10 +25,10 @@ export default function ExperienceSection() {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">Professional Experience</h2>
         <div className="relative space-y-12">
-          {experiencesData.map((exp, index) => {
+          {experiences.map((exp, index) => {
             const IconComponent = exp.iconName ? iconMap[exp.iconName] : Briefcase; // Default to Briefcase if not found
             return (
-              <div key={index} className="relative flex items-start md:items-center gap-4 md:gap-8 group">
+              <div key={exp.id} className="relative flex items-start md:items-center gap-4 md:gap-8 group">
                 <div className="hidden md:block w-1/2 text-right">
                   {index % 2 === 0 && (
                     <Card className="hover:shadow-pixel-lg-hover transition-shadow duration-300">
@@ -32,7 +36,7 @@ export default function ExperienceSection() {
                     </Card>
                   )}
                 </div>
-                
+
                 <div className="absolute z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary shadow-pixel border-2 border-primary-foreground md:relative ">
                   <IconComponent className="h-6 w-6 text-primary-foreground" /> {/* Adjusted icon color for better visibility on primary bg */}
                 </div>
@@ -49,7 +53,7 @@ export default function ExperienceSection() {
                       </Card>
                     ) : (
                       <div className="hidden md:block"> {/* Placeholder for layout balance */}
-                        <Card className="opacity-0 pointer-events-none"> 
+                        <Card className="opacity-0 pointer-events-none">
                           <ExperienceCardContent {...exp} />
                         </Card>
                       </div>
@@ -71,7 +75,6 @@ interface ExperienceCardProps {
   period: string;
   description: string;
   highlights?: string[];
-  // iconName is already part of the data from JSON, so not explicitly needed here unless used differently
 }
 
 const ExperienceCardContent: React.FC<ExperienceCardProps> = ({ role, company, period, description, highlights }) => (

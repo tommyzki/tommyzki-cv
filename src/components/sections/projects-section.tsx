@@ -5,9 +5,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Github, BookOpen } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import projectData from '@/json/projects-data.json'; // Import the JSON data
+import type { getProjectCategories } from '@/lib/content';
 
-export default function ProjectsSection() {
+type ProjectCategoryWithProjects = Awaited<ReturnType<typeof getProjectCategories>>[number];
+
+interface ProjectsSectionProps {
+  categories: ProjectCategoryWithProjects[];
+}
+
+export default function ProjectsSection({ categories }: ProjectsSectionProps) {
   return (
     <section id="projects" className="py-12 md:py-16">
       <div className="container mx-auto px-4">
@@ -16,14 +22,14 @@ export default function ProjectsSection() {
             <CardTitle className="text-2xl md:text-3xl font-bold">My Projects & Articles</CardTitle>
           </CardHeader>
           <CardContent className="space-y-12">
-            {projectData.map((category) => (
-              <div key={category.categoryTitle}>
+            {categories.map((category) => (
+              <div key={category.id}>
                 <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6 text-left border-b-2 border-primary pb-2">
                   {category.categoryTitle}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.projects.map((project) => (
-                    <Card key={project.title} className="flex flex-col bg-card">
+                    <Card key={project.id} className="flex flex-col bg-card">
                       <CardHeader>
                         <div className="flex justify-between items-start">
                           <CardTitle className="text-lg md:text-xl mb-1">{project.title}</CardTitle>

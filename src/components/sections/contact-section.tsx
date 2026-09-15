@@ -5,7 +5,7 @@ import type React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Github, Linkedin, Mail, Phone, MapPin, Instagram, Facebook, Twitter, Users } from 'lucide-react';
 import Link from 'next/link';
-import contactData from '@/json/contact-data.json';
+import type { getContact } from '@/lib/content';
 
 const iconMap: Record<string, React.ElementType> = {
   Mail,
@@ -19,7 +19,11 @@ const iconMap: Record<string, React.ElementType> = {
   MapPin,
 };
 
-export default function ContactSection() {
+interface ContactSectionProps {
+  contact: Awaited<ReturnType<typeof getContact>>;
+}
+
+export default function ContactSection({ contact }: ContactSectionProps) {
   return (
     <section id="contact" className="py-12 md:py-16">
       <div className="container mx-auto px-4">
@@ -41,19 +45,19 @@ export default function ContactSection() {
                   </p>
                 </div>
                 <div className="space-y-4">
-                  {contactData.formalContacts.map((contact) => {
-                    const IconComponent = contact.iconName ? iconMap[contact.iconName] : Mail;
+                  {contact.formalContacts.map((c) => {
+                    const IconComponent = c.iconName ? iconMap[c.iconName] : Mail;
                     return (
                       <Link
-                        key={contact.label}
-                        href={contact.href}
-                        target={contact.target || '_self'}
-                        rel={contact.target === '_blank' ? 'noopener noreferrer' : undefined}
-                        aria-label={contact.ariaLabel}
+                        key={c.label}
+                        href={c.href}
+                        target={c.target || '_self'}
+                        rel={c.target === '_blank' ? 'noopener noreferrer' : undefined}
+                        aria-label={c.ariaLabel}
                         className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
                       >
                         <IconComponent className="h-5 w-5 text-primary group-hover:animate-ping" />
-                        <span>{contact.label}</span>
+                        <span>{c.label}</span>
                       </Link>
                     );
                   })}
@@ -73,7 +77,7 @@ export default function ContactSection() {
                   </p>
                 </div>
                 <div className="space-y-4">
-                  {contactData.socialMediaLinks.map((social) => {
+                  {contact.socialMediaLinks.map((social) => {
                     const IconComponent = social.iconName ? iconMap[social.iconName] : Users; // Default
                     return (
                       <Link

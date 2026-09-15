@@ -3,7 +3,7 @@ import type React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CodeXml, Braces, Palette, Cog, Terminal, Database, GitFork, Users2, Languages, Globe2 } from 'lucide-react';
-import skillsData from '@/json/skills-data.json';
+import type { Skill, SkillCategory } from '@/generated/prisma/client';
 
 const iconMap: Record<string, React.ElementType> = {
   Braces,
@@ -18,7 +18,11 @@ const iconMap: Record<string, React.ElementType> = {
   Globe2,
 };
 
-export default function SkillsSection() {
+interface SkillsSectionProps {
+  categories: (SkillCategory & { skills: Skill[] })[];
+}
+
+export default function SkillsSection({ categories }: SkillsSectionProps) {
   return (
     <section id="skills" className="py-12 md:py-16">
       <div className="container mx-auto px-4">
@@ -27,7 +31,7 @@ export default function SkillsSection() {
             <CardTitle className="text-3xl md:text-4xl font-bold text-center text-foreground">Key Skills</CardTitle>
           </CardHeader>
           <CardContent className="space-y-8">
-            {skillsData.map((category) => {
+            {categories.map((category) => {
               const CategoryIcon = iconMap[category.categoryIconName];
               return (
                 <div key={category.title}>

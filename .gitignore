@@ -39,7 +39,17 @@ next-env.d.ts
 
 .genkit/*
 .env*
+!.env.example
 
 # firebase
 firebase-debug.log
 firestore-debug.log
+
+# prisma
+/src/generated/prisma
+
+# prisma-cli auto-installed agent skills (not used by this project)
+/.claude/skills
+/.windsurf
+/.agents
+/skills-lock.json
